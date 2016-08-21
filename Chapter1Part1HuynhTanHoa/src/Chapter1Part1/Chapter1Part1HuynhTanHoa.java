@@ -1,6 +1,7 @@
 package Chapter1Part1;
 
 import com.sun.xml.internal.ws.api.message.Message;
+import java.io.IOException;
 import java.util.Scanner;
 
 /*
@@ -28,7 +29,8 @@ public class Chapter1Part1HuynhTanHoa {
         //part1();
         //part2();
         //part3();
-        part4();
+        //part4();
+        part5();
     }
 
     // mehtod call class operator
@@ -59,5 +61,15 @@ public class Chapter1Part1HuynhTanHoa {
         System.out.println("Result Perimeter: " + perRec.calculatePerimeter());
         System.out.println("Result Area: " + perRec.calculateArea());
     }
-
+    static void part5() {
+        try {
+            SalaryStaff sa = new SalaryStaff();
+            sa.inputInfo();
+            sa.calculateSalary();
+            sa.outputInformationStaff();
+        } catch (NullPointerException e) {
+            System.out.println(e.toString());
+        }
+    }
+    
 }
