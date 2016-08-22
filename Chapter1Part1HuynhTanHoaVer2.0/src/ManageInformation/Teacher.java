@@ -58,7 +58,7 @@ public class Teacher extends Human {
         check = true;
         while (check) {
             try {
-                System.out.println("Input day of birth: ");
+                System.out.println("Input Coefficient: ");
                 setCoefficient(Double.parseDouble(input.readLine()));
             } catch (Exception e) {
                 System.err.println("Input wrong format!! Please input type (double)");
@@ -69,7 +69,7 @@ public class Teacher extends Human {
         check = true;
         while (check) {
             try {
-                System.out.println("Input address: ");
+                System.out.println("Input Allowance: ");
                 setAllowance(Double.parseDouble(input.readLine()));
             } catch (Exception e) {
                 System.err.println("Input wrong format!! Please input type (double)");
@@ -77,7 +77,7 @@ public class Teacher extends Human {
             }
             check = false;
         }
-        System.out.println("Input number phone: ");
+        System.out.println("Input Chairman in Class: ");
         setChairman(input.readLine());
     }
     public double calculateSalary(){

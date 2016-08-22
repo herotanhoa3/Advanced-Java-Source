@@ -11,7 +11,9 @@ import java.util.Scanner;
  */
 /**
  *
- * @author Huynh Tan Hoa Date :19/08/2016 Version: 1.0
+ * @author Huynh Tan Hoa 
+ * Date :19/08/2016 
+ * Version: 1.0
  */
 public class Chapter1Part1HuynhTanHoa {
 
@@ -56,11 +58,13 @@ public class Chapter1Part1HuynhTanHoa {
         System.out.println("Result Perimeter: " + per.calculatePerimeter());
         System.out.println("Result Area: " + per.calculateArea());
     }
+    // method perimeter area Rectangle
     static void part4() {
         perRec = new PerimeterAreaRectangle();
         System.out.println("Result Perimeter: " + perRec.calculatePerimeter());
         System.out.println("Result Area: " + perRec.calculateArea());
     }
+    // method call call salary staff
     static void part5() {
         try {
             SalaryStaff sa = new SalaryStaff();
