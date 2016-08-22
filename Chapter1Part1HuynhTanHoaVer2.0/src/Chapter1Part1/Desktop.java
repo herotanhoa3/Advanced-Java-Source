@@ -5,6 +5,8 @@
  */
 package Chapter1Part1;
 
+import java.io.IOException;
+
 /**
  *
  * @author hv
@@ -26,18 +28,30 @@ public class Desktop extends Computer {
     public void setRAM(String RAM) {
         this.RAM = RAM;
     }
-    public Desktop(){
+
+    public Desktop() {
     }
     String CPU;
     String RAM;
-    public Desktop (int id, int price, String manufacturer, int numberInput, String CPU, String RAM) {
+    public Desktop(int id, int price, String manufacturer, int numberInput, String CPU, String RAM) {
         super(id, price, manufacturer, numberInput);
         this.CPU = CPU;
         this.RAM = RAM;
     }
+    @Override
+    public void inputInfo() throws IOException{
+        super.inputInfo();
+        System.out.println("Input CPU: ");
+        setCPU(input.readLine());
+        System.out.println("Input RAM: ");
+        setRAM(input.readLine());
+    }
+
+    @Override
     public void showInfo() {
-        showInfo();
+        super.showInfo();
         System.out.println("CPU: " + CPU);
         System.out.println("RAM: " + RAM);
+        System.out.println("Total amount: " + String.format("%.1f", calculateBill()));
     }
 }

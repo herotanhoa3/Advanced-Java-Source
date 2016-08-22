@@ -1,4 +1,6 @@
-package Chapter1Part1;
+package SimulatortFight;
+
+import Chapter1Part1.ManageComputer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,10 +19,9 @@ public class Chapter1Part1HuynhTanHoa {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        SimulatorFight sim = new SimulatorFight();
-//        sim.Fight();
-        ManageComputer man = new ManageComputer();
-        man.inputInfoComputer();
+        SimulatorFight sim = new SimulatorFight();
+        sim.Fight();
+        
     }
     
 }

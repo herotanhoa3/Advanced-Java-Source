@@ -5,11 +5,19 @@
  */
 package Chapter1Part1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 /**
  *
  * @author hv
  */
 public class Computer {
+
+    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+    //Scanner input = new Scanner(System.in);
 
     public int getId() {
         return id;
@@ -42,7 +50,6 @@ public class Computer {
     public void setNumberInput(int numberInput) {
         this.numberInput = numberInput;
     }
-    
 
     public Computer(int id, int price, String manufacturer, int numberInput) {
         this.id = id;
@@ -50,6 +57,7 @@ public class Computer {
         this.manufacturer = manufacturer;
         this.numberInput = numberInput;
     }
+
     public Computer() {
     }
     // General
@@ -58,11 +66,61 @@ public class Computer {
     String manufacturer;
     int numberInput;
     double totalAmount;
+    boolean check;
 
     public double calculateBill() {
         totalAmount = price * numberInput;
         return totalAmount;
     }
+
+    public void inputInfo() throws IOException {
+        check = true;
+        while (check) {
+            try {
+                System.out.println("Input ID: ");
+                setId(Integer.parseInt(input.readLine()));
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (int)");
+                continue;
+            }
+            check = false;
+        }
+        check = true;
+        while (check) {
+            try {
+                System.out.println("Input Price: ");
+                setPrice(Integer.parseInt(input.readLine()));
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (int)");
+                continue;
+            }
+            check = false;
+        }
+        check = true;
+        while (check) {
+            try {
+                System.out.println("Input Manufacturer: ");
+                setManufacturer(input.readLine());
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (String)");
+                continue;
+            }
+            check = false;
+        }
+        check = true;
+        while (check) {
+            try {
+                System.out.println("Input Number: ");
+                setNumberInput(Integer.parseInt(input.readLine()));
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (int)");
+                continue;
+            }
+            check = false;
+        }
+
+    }
+
     public void showInfo() {
         System.out.println("Id: " + id);
         System.out.println("Price: " + price);

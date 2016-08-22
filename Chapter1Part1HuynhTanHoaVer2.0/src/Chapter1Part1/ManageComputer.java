@@ -5,6 +5,10 @@
  */
 package Chapter1Part1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,68 +17,64 @@ import java.util.Scanner;
  * @author hv
  */
 public class ManageComputer {
-
+    //BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     Scanner input = new Scanner(System.in);
-    ArrayList<Computer> ListCp;
+    ArrayList<Desktop> ListDesk;
+    ArrayList<Laptop> ListLap;
     Computer com;
     Desktop des;
     Laptop lap;
-    int kind = 0;
+    String kind = "";
     boolean check;
     String str = "";
 
     public ManageComputer() {
-        ListCp = new ArrayList<>();
+        ListDesk = new ArrayList<>();
+        ListLap = new ArrayList<>();
     }
-
-    public void inputInfoComputer() {
-        check=true;
+    //Method Override show manage of Computer
+    public void inputInfoComputer() throws IOException{
+        check = true;
         while (check) {
-            com = new Computer();
-            System.out.println("Input ID: ");
-            com.setId(input.nextInt());
-            System.out.println("Input: ");
-            com.setPrice(input.nextInt());
-            System.out.println("Input Manufacturer: ");
-            com.setManufacturer(input.next());
-            System.out.println("Input Number: ");
-            com.setNumberInput(input.nextInt());
-            System.out.println("Choose kind comuter Desktop(1)/ Laptop(2)");
-            kind = input.nextInt();
-            if (kind == 1) {
-                des = new Desktop();
-                System.out.println("Input CPU: ");
-                des.setCPU(input.next());
-                System.out.println("Input RAM: ");
-                des.setRAM(input.next());
-                ListCp.add(des);
-                System.out.println("Total Price: " + des.calculateBill());
-            } else if (kind == 2) {
-                lap = new Laptop();
-                System.out.println("Input Weight: ");
-                lap.setWeight(input.nextInt());
-                System.out.println("Input Battery: ");
-                lap.setBattery(input.nextInt());
-                System.out.println("Input Screen size: ");
-                lap.setScreenSize(input.nextInt());
-                ListCp.add(lap);
-                System.out.println("Total Price: " + lap.calculateBill());
-            }
-            System.out.println("Do you want add continue 'Y' or 'N'");
-            str = input.next();
-
-            if (str != "y" || str != "Y") {
+            try {
+                System.out.println("Choose kind computer Desktop(1)/ Laptop(2)");
+                kind = input.next();
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (int)");
                 continue;
             }
-            check = false;
+            if (kind.equalsIgnoreCase("1") ) {
+                des = new Desktop();
+                des.inputInfo();
+                ListDesk.add(des);
+            } else if (kind.equalsIgnoreCase("2")) {
+                lap = new Laptop();
+                lap.inputInfo();
+                ListLap.add(lap);
+            } else {
+                System.err.println("Input wrong format!! Please input (1) or (2)");
+                continue;
+            }
+
+            System.out.println("Do you want add continue 'Y' or 'N'");
+            str = input.next();
+            if (str.equalsIgnoreCase("y")) {
+                continue;
+            } else {
+                check = false;
+            }
+
         }
         double s = 0;
-        for (int i = 0; i < ListCp.size(); i++) {
-            System.out.println("[Computer No " + (i + 1) + "]:");
-            ListCp.get(i).showInfo();
-            s += ListCp.get(i).calculateBill();
-            System.out.println("-----------------");
-
+        for (Desktop des : ListDesk) {
+            System.out.println("Information of Computer kind Desktop: ");
+            s += des.calculateBill();
+            des.showInfo();
+        }
+        for (Laptop lap : ListLap) {
+            System.out.println("Information of Computer kind Laptop: ");
+            s += lap.calculateBill();
+            lap.showInfo();
         }
         System.out.println("Total Price: " + String.format("%.1f", s));
 

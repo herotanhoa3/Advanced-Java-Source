@@ -5,6 +5,8 @@
  */
 package Chapter1Part1;
 
+import java.io.IOException;
+
 /**
  *
  * @author hv
@@ -34,11 +36,13 @@ public class Laptop extends Computer {
     public void setScreenSize(int screenSize) {
         this.screenSize = screenSize;
     }
-    public Laptop(){
+
+    public Laptop() {
     }
     int weight;
     int battery;
     int screenSize;
+    boolean check;
 
     public Laptop(int id, int price, String manufacturer, int numberInput, int weight, int battery, int screenSize) {
         super(id, price, manufacturer, numberInput);
@@ -46,10 +50,50 @@ public class Laptop extends Computer {
         this.battery = battery;
         this.screenSize = screenSize;
     }
+    //Method Override input information of Laptop
+    @Override
+    public void inputInfo() throws IOException {
+        super.inputInfo();
+        check = true;
+        while (check) {
+            try {
+                System.out.println("Input Weight: ");
+                setWeight(Integer.parseInt(input.readLine()));
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (int)");
+                continue;
+            }
+            check = false;
+        }
+        while (check) {
+            try {
+                System.out.println("Input Battery: ");
+                setBattery(Integer.parseInt(input.readLine()));
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (int)");
+                continue;
+            }
+            check = false;
+        }
+        check = true;
+        while (check) {
+            try {
+                System.out.println("Input Screen size: ");
+                setScreenSize(Integer.parseInt(input.readLine()));
+            } catch (Exception e) {
+                System.err.println("Input wrong format!! Please input type (int)");
+                continue;
+            }
+            check = false;
+        }
+    }
+    ////Method Override show information of Laptop
+    @Override
     public void showInfo() {
-        showInfo();
+        super.showInfo();
         System.out.println("Weight: " + weight);
         System.out.println("Battery: " + battery);
         System.out.println("Screen Size: " + screenSize);
+        System.out.println("Total amount: " + String.format("%.1f", calculateBill()));
     }
 }

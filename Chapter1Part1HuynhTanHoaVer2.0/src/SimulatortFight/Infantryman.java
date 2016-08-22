@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Chapter1Part1;
+package SimulatortFight;
 
 /**
  *
- * @author hv
+ * Huynh Tan Hoa 22/08/2016 Ver 1.0
  */
-public class Trooper extends Soldier{
+public class Infantryman extends Soldier {
 
     @Override
     public int fight() {
-        power = power - 3;
+        power = power - 2;
         return  power;
     }
-    
 }
