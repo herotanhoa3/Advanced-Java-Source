@@ -72,7 +72,7 @@ public class Computer {
         totalAmount = price * numberInput;
         return totalAmount;
     }
-
+    //Method input information of Computer
     public void inputInfo() throws IOException {
         check = true;
         while (check) {
@@ -121,6 +121,7 @@ public class Computer {
 
     }
 
+    //Method show information of Computer
     public void showInfo() {
         System.out.println("Id: " + id);
         System.out.println("Price: " + price);

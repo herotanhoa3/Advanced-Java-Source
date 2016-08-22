@@ -87,7 +87,7 @@ public class Laptop extends Computer {
             check = false;
         }
     }
-    ////Method Override show information of Laptop
+    //Method Override show information of Laptop
     @Override
     public void showInfo() {
         super.showInfo();

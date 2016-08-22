@@ -40,7 +40,7 @@ public class ManageComputer {
                 System.out.println("Choose kind computer Desktop(1)/ Laptop(2)");
                 kind = input.next();
             } catch (Exception e) {
-                System.err.println("Input wrong format!! Please input type (int)");
+                System.err.println("Input wrong format!! ");
                 continue;
             }
             if (kind.equalsIgnoreCase("1") ) {

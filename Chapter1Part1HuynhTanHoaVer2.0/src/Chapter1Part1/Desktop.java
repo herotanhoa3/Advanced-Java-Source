@@ -38,6 +38,7 @@ public class Desktop extends Computer {
         this.CPU = CPU;
         this.RAM = RAM;
     }
+    //Method Override input information of Desktop
     @Override
     public void inputInfo() throws IOException{
         super.inputInfo();
@@ -46,7 +47,7 @@ public class Desktop extends Computer {
         System.out.println("Input RAM: ");
         setRAM(input.readLine());
     }
-
+    //Method Override show information of Desktop
     @Override
     public void showInfo() {
         super.showInfo();
