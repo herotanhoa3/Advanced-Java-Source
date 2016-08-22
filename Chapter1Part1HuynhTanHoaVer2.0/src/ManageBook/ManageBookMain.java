@@ -3,25 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ManageInformation;
+package ManageBook;
 
 import java.io.IOException;
+
 /**
  *
  * @author Hoa Huynh
- * DATE: 23/08/2016
- * VER 1.0
  */
-public class ManageInformationMain {
+public class ManageBookMain {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException{
         // TODO code application logic here
-        ManageHunman man = new ManageHunman();
-        man.manageHuman();
-        
+        ManageBook man = new ManageBook();
+        man.managerBook();
     }
     
 }

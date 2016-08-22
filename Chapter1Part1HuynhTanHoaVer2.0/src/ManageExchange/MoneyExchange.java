@@ -10,6 +10,8 @@ import java.io.IOException;
 /**
  *
  * @author Hoa Huynh
+ * DATE: 23/08/2016
+ * VER 1.0
  */
 public class MoneyExchange extends Exchange {
 
@@ -69,7 +71,7 @@ public class MoneyExchange extends Exchange {
         }
         return totalPrice;
     }
-
+    //METHOD OVERRIDE INPUT INFORMATION MONEY 
     @Override
     public void inputInfo() throws IOException {
         super.inputInfo();
@@ -105,7 +107,7 @@ public class MoneyExchange extends Exchange {
             check = false;
         }
     }
-
+    //METHOD OVERRIDE OUTPUT INFORMATION MONEY  
     @Override
     public void showInfo() {
         super.showInfo();
@@ -113,7 +115,7 @@ public class MoneyExchange extends Exchange {
     }
 
 }
-
+//ENUM TYPE MONEY
 enum MoneyType {
     USD(22260), EUR(24900), AUD(16700);
 

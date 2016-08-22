@@ -10,6 +10,8 @@ import java.io.IOException;
 /**
  *
  * @author Hoa Huynh
+ * DATE: 23/08/2016
+ * VER 1.0
  */
 public class GoldExchange extends Exchange {
 
@@ -51,7 +53,7 @@ public class GoldExchange extends Exchange {
         }
         return totalPrice;
     }
-
+    //METHOD OVERRIDE INPUT INFORMATION GOLD    
     @Override
     public void inputInfo() throws IOException {
         super.inputInfo();
@@ -71,7 +73,7 @@ public class GoldExchange extends Exchange {
             check = false;
         }
     }
-
+    //METHOD OVERRIDE OUTPUT INFORMATION GOLD    
     @Override
     public void showInfo() {
         super.showInfo();
@@ -80,7 +82,7 @@ public class GoldExchange extends Exchange {
     }
 
 }
-
+//ENUM TYPE GOLD
 enum GoldType {
     Gold18K(25978000), Gold24K(35141000), GoldSJC(36230000);
     double price;

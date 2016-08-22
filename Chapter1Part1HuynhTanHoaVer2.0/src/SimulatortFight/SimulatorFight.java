@@ -6,10 +6,11 @@
 package SimulatortFight;
 
 import java.util.Scanner;
-
 /**
  *
- * Huynh Tan Hoa 22/08/2016 Ver 1.0
+ * @author Hoa Huynh
+ * DATE: 23/08/2016
+ * VER 1.0
  */
 public class SimulatorFight {
 
