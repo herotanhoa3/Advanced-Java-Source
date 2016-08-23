@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package Zoo;
-
 /**
  *
- * @author hv
+ * @author Huynh Tan Hoa
+ * 23/08/2016
+ * Version 1.0
  */
 public class Boa extends Animal implements IRunning, ISwimming, IResident, IGrowing {
 

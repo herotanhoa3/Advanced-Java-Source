@@ -7,7 +7,9 @@ package Zoo;
 
 /**
  *
- * @author hv
+ * @author Huynh Tan Hoa
+ * 23/08/2016
+ * Version 1.0
  */
 public class Fish extends Animal implements ISwimming, IResident, IGrowing {
 

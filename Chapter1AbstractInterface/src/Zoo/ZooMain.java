@@ -15,7 +15,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author hv
+ * @author Huynh Tan Hoa
+ * 23/08/2016
+ * Version 1.0
  */
 public class ZooMain {
 

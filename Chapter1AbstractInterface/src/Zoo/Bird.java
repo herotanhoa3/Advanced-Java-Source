@@ -7,7 +7,9 @@ package Zoo;
 
 /**
  *
- * @author hv
+ * @author Huynh Tan Hoa
+ * 23/08/2016
+ * Version 1.0
  */
 public class Bird extends Animal implements IFlying, IRunning, ISwimming, IResident, IGrowing {
 
@@ -42,7 +44,7 @@ public class Bird extends Animal implements IFlying, IRunning, ISwimming, IResid
     public void grow() {
         System.out.println("Molt");
     }
-
+    //Method show Information
     void showInfo() {
         System.out.println("-------Bird-------");
         System.out.println("Name: " + getName());

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Zoo;
+package ManageVehicle;
 
 /**
  *
@@ -11,6 +11,8 @@ package Zoo;
  * 23/08/2016
  * Version 1.0
  */
-public interface IResident {
-    void resident();
+public interface ITransport {
+    double getSpeed();
+    double getFuelConsumption();
+
 }
