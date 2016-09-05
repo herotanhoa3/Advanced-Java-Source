@@ -1,5 +1,5 @@
 
-package chap1part3_Factory;
+package chap1part3_FactoryShape;
 /**
  *
  * @author Huynh Tan Hoa
