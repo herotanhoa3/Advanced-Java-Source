@@ -89,10 +89,8 @@ public class main {
         student.allSessionMark = finalGrade2.calAllSessionMark();
         student.finalMark = finalGrade2.calFinalGrade();
         listStudent.add(student);
-        // calculate Mark student 1
-
-        // calculate Mark student 2
-        //
+        
+        // Run Program
         System.out.println("----------Manage Class----------");
         boolean check = true;
         int choose = 0;
