@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Huynh Tan Hoa Version 1.0 Date: 6/9/2016
+ * @author Huynh Tan Hoa 
+ * @Version 1.0 
+ * @Date: 6/9/2016
  */
 public class main {
 
