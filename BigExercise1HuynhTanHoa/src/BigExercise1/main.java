@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.Buffer;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Huynh Tan Hoa Version 1.0 Date: 6/9/2016
@@ -20,60 +21,153 @@ public class main {
     public static Student student;
     public static Class cla;
     public static Subject subject;
+
     public static void main(String[] args) throws IOException {
-        //Create list Subject
-            listSubjects = new ArrayList<>();
-            subject = new Subject("1/1/2016", "Java Basic", 50, "1/3/2016");
-            listSubjects.add(subject);
-            subject = new Subject("2/3/2016", "Java Advanced", 70, "3/6/2016");
-            listSubjects.add(subject);
-            subject = new Subject("2/3/2016", "Linux Programing", 40, "3/6/2016");
-            listSubjects.add(subject);
+        listSubjects = new ArrayList<>();
+        subject = new Subject("1/1/2016", "Java Basic", 50, "1/3/2016");
+        listSubjects.add(subject);
+        subject = new Subject("2/3/2016", "Java Advanced", 70, "3/6/2016");
+        listSubjects.add(subject);
+        subject = new Subject("2/3/2016", "Linux Programing", 40, "3/6/2016");
+        listSubjects.add(subject);
         //Create list Teacher
-            listTeacher = new ArrayList<>();
-            teacher = new Teacher(listSubjects.get(0), "Ngo Tat To", "ngotatto@gmail.com", "097289402");
-            listTeacher.add(teacher);
-            teacher = new Teacher(listSubjects.get(1), "To Hoai", "tohoai@gmail.com", "015782145");
-            listTeacher.add(teacher);
-            teacher = new Teacher(listSubjects.get(2), "Ly Bach", "lybach@gmail.com", "098563214");
-            listTeacher.add(teacher);
+        listTeacher = new ArrayList<>();
+        teacher = new Teacher("Ngo Tat To", "ngotatto@gmail.com", "097289402");
+        listTeacher.add(teacher);
+        teacher = new Teacher("To Hoai", "tohoai@gmail.com", "015782145");
+        listTeacher.add(teacher);
+        teacher = new Teacher("Ly Bach", "lybach@gmail.com", "098563214");
+        listTeacher.add(teacher);
         // Create list Class
-            listClass = new ArrayList<>();
-            cla = new Class("GCS Training", "T124183", "1/1/2016", "3/6/2016", 160, subject, teacher);
+        listClass = new ArrayList<>();
+        cla = new Class("GCS Training", "T124183", "1/1/2016", "3/6/2016", 160);
+
         // Create list student
-            listStudent = new ArrayList<>();
-            student = new Student("1/5/1994", cla, "Huynh Tan Hoa", "huynhtanhoa@gmail.com", "0965162900");
-            listStudent.add(student);
-            student = new Student("13/3/1992", cla, "Bui Truong Thi Tuan", "buitruongthituan@gmail.com", "0152468214");
-            listStudent.add(student);
-            student = new Student("11/2/1993", cla, "Tran Pham Hai Dang", "tranphamhaidang@gmail.com", "0949622990");
-            listStudent.add(student);
+        listStudent = new ArrayList<>();
+        student = new Student("1/5/1994", "Huynh Tan Hoa", "huynhtanhoa@gmail.com", "0965162900");
+        MarkSession markSession = new MarkSession(10, 10, 10);
+        MarkSession markSession1 = new MarkSession(8, 8, 8);
+        MarkSession markSession2 = new MarkSession(9, 9, 9);
+        List<MarkSession> listJava_A = new ArrayList<>();
+        listJava_A.add(markSession);
+        listJava_A.add(markSession1);
+        listJava_A.add(markSession2);
+        FinalGrade finalGrade = new FinalGrade(listJava_A, new MarkExam(9, 9));
+        student.markMultiChoice = 9;
+        student.markPractice = 9;
+        student.finalMark = finalGrade.calFinalGrade();
+        student.allSessionMark = finalGrade.calAllSessionMark();
+        listStudent.add(student);
+        student = new Student("13/3/1992", "Bui Truong Thi Tuan", "buitruongthituan@gmail.com", "0152468214");
+        MarkSession markSession3 = new MarkSession(10, 9, 8);
+        MarkSession markSession4 = new MarkSession(7, 6, 5);
+        MarkSession markSession5 = new MarkSession(8, 9, 8);
+        List<MarkSession> listJava_B = new ArrayList<>();
+        listJava_B.add(markSession3);
+        listJava_B.add(markSession4);
+        listJava_B.add(markSession5);
+        FinalGrade finalGrade1 = new FinalGrade(listJava_B, new MarkExam(6, 9));
+        student.markMultiChoice = 6;
+        student.markPractice = 9;
+        student.allSessionMark = finalGrade1.calAllSessionMark();
+        student.finalMark = finalGrade1.calFinalGrade();
+        listStudent.add(student);
+        student = new Student("11/2/1993", "Tran Pham Hai Dang", "tranphamhaidang@gmail.com", "0949622990");
+        MarkSession markSession6 = new MarkSession(10, 9, 8);
+        MarkSession markSession7 = new MarkSession(8, 9, 8);
+        MarkSession markSession8 = new MarkSession(8, 9, 8);
+        List<MarkSession> listJava_C = new ArrayList<>();
+        listJava_C.add(markSession6);
+        listJava_C.add(markSession7);
+        listJava_C.add(markSession8);
+        FinalGrade finalGrade2 = new FinalGrade(listJava_B, new MarkExam(9, 8));
+        student.markMultiChoice = 9;
+        student.markPractice = 8;
+        student.allSessionMark = finalGrade2.calAllSessionMark();
+        student.finalMark = finalGrade2.calFinalGrade();
+        listStudent.add(student);
+        // calculate Mark student 1
+
+        // calculate Mark student 2
         //
         System.out.println("----------Manage Class----------");
         boolean check = true;
         int choose = 0;
         while (check) {
             try {
-                System.out.println("Choose show(1)/ add(2)/ edit(3)/ delete(4)/ check attendance(5) students");
+                System.out.println("Choose (1), (2), (3), (4), (5)");
+                System.out.println("1). Show Information Class");
+                System.out.println("2). Show Information Subject ");
+                System.out.println("3). Show Information Student ");
+                System.out.println("4). Show Information Teacher ");
+                System.out.println("5). Show Mark Table of Student ");
                 choose = Integer.parseInt(input.readLine());
             } catch (Exception e) {
-                System.err.println("Wrong input!! please input from 1 to 5");
+                System.err.println("Wrong input!! please input from 1 to 3");
                 continue;
             }
-            check = false;
-        }
-        if(choose == 1){
-            for(int i = 0; i< listStudent.size(); i++){
-                System.out.println("Student ["+(i+1)+"] :");
-                System.out.println("Name: "+ listStudent.get(i).getName());
-                System.out.println("Date of birth: "+ listStudent.get(i).getDateOfBirth());
-                System.out.println("Phone: "+ listStudent.get(i).getPhone());
-                System.out.println("Email: "+ listStudent.get(i).getEmail());
-                System.out.println("Class: "+ listStudent.get(i).getCla());
-                System.out.println("Final Grade: "+ listStudent.get(i).getCla());
-                System.out.println("------------------------------------------------");
+            if (choose == 1) {
+                System.out.println("-------Show Information Class-------");
+                System.out.println("Name class: " + cla.getName());
+                System.out.println("ID: " + cla.getId());
+                System.out.println("Date start: " + cla.getDateStart());
+                System.out.println("Date end: " + cla.getDateEnd());
+                System.out.println("Number of subjects: " + listSubjects.size());
+                System.out.println("Number of teacher: " + listTeacher.size());
+                System.out.println("Number of student: " + listStudent.size());
+                System.out.println("-----------------------------------------");
+            } else if (choose == 2) {
+                System.out.println("-------Show Information Subject-------");
+                System.out.println("Number of Subject: " + listSubjects.size());
+                System.out.println("Include: ");
+                for (Subject subject : listSubjects) {
+                    System.out.println("Name subject: " + subject.getName());
+                    System.out.println("Sum lessons: " + subject.getSumLesson());
+                    System.out.println("Date start: " + subject.getDateStart());
+                    System.out.println("Date end: " + subject.getDateEnd());
+                    System.out.println("Teacher: " + listTeacher.get(0).getName());
+                    System.out.println("==================================");
+                }
+            } else if (choose == 3) {
+                System.out.println("-------Show Information Student-------");
+                System.out.println("Number of Student: " + listStudent.size());
+                System.out.println("Include: ");
+                for (Student student : listStudent) {
+                    System.out.println("Name student: " + student.getName());
+                    System.out.println("Email: " + student.getEmail());
+                    System.out.println("Phone: " + student.getPhone());
+                    System.out.println("Date of birth: " + student.getDateOfBirth());
+                    System.out.println("Final Mark: " + student.finalMark);
+                    System.out.println("==================================");
+                }
+            } else if (choose == 4) {
+                System.out.println("-------Show Information Teacher-------");
+                System.out.println("Number of Teacher: " + listTeacher.size());
+                System.out.println("Include: ");
+                for (Teacher teacher : listTeacher) {
+                    System.out.println("Name student: " + teacher.getName());
+                    System.out.println("Email: " + teacher.getEmail());
+                    System.out.println("Phone: " + teacher.getPhone());
+                    System.out.println("List subject: " + listSubjects.get(0).getName());
+                    System.out.println("==================================");
+                }
+            } else if (choose == 5) {
+                System.out.println("-------Show Mark Table-------");
+                for (Student student : listStudent) {
+                    System.out.println("-------Table Mark -------");
+                    System.out.println("Name student: " + student.getName());
+                    System.out.println("Mark of Multichoice: " + student.markMultiChoice);
+                    System.out.println("Mark of Practice: " + student.markPractice);
+                    System.out.println("Sum Individual: " + student.allSessionMark);
+                    System.out.println("Final Mark: " + student.finalMark);
+                    System.out.println("==================================");
+                }
+            }else{
+                System.err.println("Wrong input!! please input from 1 to 5");
             }
+            //check = false;
         }
+
     }
 
 }

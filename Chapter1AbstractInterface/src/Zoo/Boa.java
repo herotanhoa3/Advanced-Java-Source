@@ -36,6 +36,7 @@ public class Boa extends Animal implements IRunning, ISwimming, IResident, IGrow
     public void grow() {
         System.out.println("Molting");
     }
+    //Method show Information
     void showInfo(){
         System.out.println("-------Boa-------");
         System.out.println("Name: "+getName());

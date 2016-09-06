@@ -1,5 +1,7 @@
 package BigExercise1;
 
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,24 +13,21 @@ package BigExercise1;
  */
 public class Teacher extends Person {
 
-    public Subject getSubject() {
-        return subject;
+    public ArrayList<Subject> getListSubjects() {
+        return listSubjects;
     }
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public void setListSubjects(ArrayList<Subject> listSubjects) {
+        this.listSubjects = listSubjects;
     }
 
-    public Teacher(Subject subject, String name, String email, String phone) {
+    public Teacher(String name, String email, String phone) {
         super(name, email, phone);
-        this.subject = subject;
-    }
-
-    public Teacher(Subject subject) {
-        this.subject = subject;
     }
 
     public Teacher() {
+
     }
-    public Subject subject;
+
+    public ArrayList<Subject> listSubjects;
 }

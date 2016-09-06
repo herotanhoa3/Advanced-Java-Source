@@ -1,5 +1,6 @@
 package BigExercise1;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /*
@@ -7,12 +8,29 @@ import java.util.Date;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author hv
  */
 public class Class {
+
+    public Class(String name, String id, String dateStart, String dateEnd, int sumLesson) {
+        this.name = name;
+        this.id = id;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+        this.sumLesson = sumLesson;
+    }
+
+    public Class() {
+    }
+    public String name;
+    public String id;
+    public String dateStart;
+    public String dateEnd;
+    public int sumLesson;
+    public ArrayList<Student> listStudent;
+    public ArrayList<Subject> listSubjects;
 
     public String getName() {
         return name;
@@ -54,41 +72,20 @@ public class Class {
         this.sumLesson = sumLesson;
     }
 
-    public Subject getSubject() {
-        return subject;
+    public ArrayList<Student> getListStudent() {
+        return listStudent;
     }
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public void setListStudent(ArrayList<Student> listStudent) {
+        this.listStudent = listStudent;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+    public ArrayList<Subject> getListSubjects() {
+        return listSubjects;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setListSubjects(ArrayList<Subject> listSubjects) {
+        this.listSubjects = listSubjects;
     }
 
-    public Class(String name, String id, String dateStart, String dateEnd, int sumLesson, Subject subject, Teacher teacher) {
-        this.name = name;
-        this.id = id;
-        this.dateStart = dateStart;
-        this.dateEnd = dateEnd;
-        this.sumLesson = sumLesson;
-        this.subject = subject;
-        this.teacher = teacher;
-    }
-
-    
-    public Class() {
-    }
-
-    public String name;
-    public String id;
-    public String dateStart;
-    public String dateEnd;
-    public int sumLesson;
-    public Subject subject;
-    public Teacher teacher;
 }

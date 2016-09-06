@@ -34,7 +34,7 @@ public class ManageZoo {
         ListTiger = new ArrayList<Tiger>();
         ListBoa = new ArrayList<Boa>();
     }
-
+    //Method Manage Zoo
     public void ManageZoo() throws IOException {
 
         boolean check;

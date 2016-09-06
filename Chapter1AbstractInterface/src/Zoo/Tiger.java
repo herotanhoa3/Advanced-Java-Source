@@ -31,6 +31,7 @@ public class Tiger extends Animal implements IRunning, IResident, IGrowing{
     public void grow() {
         System.out.println("Grow");
     }
+    //Method show Information
     void showInfo(){
         System.out.println("-------Tiger-------");
         System.out.println("Name: "+getName());

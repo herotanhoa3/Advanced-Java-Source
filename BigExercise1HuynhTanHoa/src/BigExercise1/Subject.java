@@ -1,5 +1,6 @@
 package BigExercise1;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /*
@@ -12,17 +13,6 @@ import java.util.Date;
  * @author hv
  */
 public class Subject {
-
-    public Subject(String dateStart, String name, int sumLesson, String dateEnd, Teacher teacher) {
-        this.dateStart = dateStart;
-        this.name = name;
-        this.sumLesson = sumLesson;
-        this.dateEnd = dateEnd;
-        this.teacher = teacher;
-    }
-
-    public Subject() {
-    }
 
     public String getDateStart() {
         return dateStart;
@@ -56,16 +46,29 @@ public class Subject {
         this.dateEnd = dateEnd;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+    public ArrayList<Teacher> getListTeacher() {
+        return listTeacher;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setListTeacher(ArrayList<Teacher> listTeacher) {
+        this.listTeacher = listTeacher;
     }
+
+    public Subject(String dateStart, String name, int sumLesson, String dateEnd) {
+        this.dateStart = dateStart;
+        this.name = name;
+        this.sumLesson = sumLesson;
+        this.dateEnd = dateEnd;
+    }
+    public Subject(){
+    }
+    
+
     public String dateStart;
     public String name;
     private int sumLesson;
     public String dateEnd;
-    public Teacher teacher;
+    
+    public ArrayList<Teacher> listTeacher;
+    //Constructor Subject
 }

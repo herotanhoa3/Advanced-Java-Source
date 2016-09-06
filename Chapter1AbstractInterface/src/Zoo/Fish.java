@@ -31,6 +31,7 @@ public class Fish extends Animal implements ISwimming, IResident, IGrowing {
     public void grow() {
         System.out.println("Grow");
     }
+    //Method show Information
     void showInfo(){
         System.out.println("-------Fish-------");
         System.out.println("Name: "+getName());
