@@ -14,7 +14,9 @@ import java.util.TreeMap;
 
 /**
  *
- * @author hv
+ * @author Huynh Tan Hoa
+ * @Date 7/9/2016
+ * @version 1.0
  */
 public class ManageStudent {
 
@@ -39,7 +41,15 @@ public class ManageStudent {
             System.out.println("2). Add new student");
             System.out.println("3). Search student in List");
             System.out.println("4). Delete a student");
-            int choose = Integer.parseInt(input.readLine());
+            System.out.println("5). Exit");
+            int choose = 0;
+            try {
+                choose = Integer.parseInt(input.readLine());
+            } catch (Exception e) {
+                System.err.println("Please input type integer");
+                continue;
+            }
+
             if (choose == 1) {
                 System.out.println("--------List Student--------");
                 for (Object key : listTreeMap.keySet()) {
@@ -70,34 +80,41 @@ public class ManageStudent {
                 student.setPlaceOfBirth(input.readLine());
                 listTreeMap.put(student.getId(), student);
             }
-            if(choose == 3){
+            if (choose == 3) {
                 System.out.println("--------Search student in List--------");
                 System.out.println("Input id: ");
                 String word = input.readLine();
                 boolean result = listTreeMap.containsKey(word);
-                if(result == true){
+                if (result == true) {
                     System.out.println("Have student in List!!");
-                    
+
                     System.out.println(listTreeMap.get(word));
-                }else{
+                } else {
                     System.out.println("Don't have student in List");
                 }
                 System.out.println("------------------------------");
             }
-            if(choose ==4){
+            if (choose == 4) {
                 System.out.println("--------Delete a student in List--------");
                 System.out.println("Input ID want delete: ");
                 String word = input.readLine();
                 boolean result = listTreeMap.containsKey(word);
-                if(result == true){
+                if (result == true) {
                     System.out.println("Have student in List!!");
-                    
+
                     listTreeMap.remove(word);
                     System.out.println("Deleted !!");
-                }else{
+                } else {
                     System.out.println("Don't have student in List");
                 }
                 System.out.println("------------------------------");
+            } else if (choose == 5) {
+                flag = false;
+                System.out.println("Goodbye!!!");
+                break;
+            } else {
+                System.err.println("Please input 1 to 5");
+                continue;
             }
         }
     }

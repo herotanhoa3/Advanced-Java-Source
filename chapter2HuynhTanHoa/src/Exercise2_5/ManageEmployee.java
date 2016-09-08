@@ -12,18 +12,18 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import javafx.application.Application;
-
 /**
  *
  * @author Huynh Tan Hoa
+ * @Date 7/9/2016
  * @version 1.0
- *
  */
 public class ManageEmployee {
 
     ArrayList<Employee> listEmployees;
     Employee employee;
 
+    //method manage Employee
     public void ManageEmployee() throws IOException {
         listEmployees = new ArrayList<>();
         employee = new Employee("T22222", "Ronaldinho Gauch", 25, 7000000);
@@ -127,12 +127,11 @@ public class ManageEmployee {
                     System.out.println("Don't have employee in List");
                 }
                 System.out.println("------------------------------");
-            } else if(choose == 5){
+            } else if (choose == 5) {
                 flag = false;
-                 System.out.println("Goodbye!!!");
-                 break;
-            }
-            else {
+                System.out.println("Goodbye!!!");
+                break;
+            } else {
                 System.err.println("Please input 1 to 4");
                 continue;
             }
