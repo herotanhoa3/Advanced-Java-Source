@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercise2_5;
-
+package Exercise2_3;
 
 /**
  *
  * @author hv
  */
-public class Employee implements Comparable<Employee>{
+public class Student {
 
     public String getId() {
         return id;
@@ -36,34 +35,30 @@ public class Employee implements Comparable<Employee>{
         this.age = age;
     }
 
-    public double getSalary() {
-        return salary;
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
     }
 
-    public Employee(String id, String name, int age, double salary) {
+    public Student(String id, String name, int age, String placeOfBirth) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.salary = salary;
+        this.placeOfBirth = placeOfBirth;
     }
-    public Employee(){
+    public Student(){
     }
     public String id;
     public String name;
     public int age;
-    public double salary;
-
-    @Override
-    public int compareTo(Employee o) {
-        return Double.compare(o.salary, this.salary);
-    }
-    public String toString(){
-        return "id: " + this.id + "\nname: " + this.name + "\nage: " + this.age
-                + "\nsalary: " + this.salary;
-    }
+    public String placeOfBirth;
     
+    @Override
+    public String toString() {
+        return  "\nid: " + this.id + "\nname: " + this.name + "\nage: " + this.age + "\n"
+                + "place of birth: "+ this.placeOfBirth ;
+    }
 }

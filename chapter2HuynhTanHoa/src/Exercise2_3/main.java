@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercise2_5;
+package Exercise2_3;
 
 import java.io.IOException;
 
@@ -18,8 +18,8 @@ public class main {
      */
     public static void main(String[] args) throws IOException{
         // TODO code application logic here
-        ManageEmployee manage = new ManageEmployee();
-        manage.ManageEmployee();
+        ManageStudent manage = new ManageStudent();
+        manage.ManageStudent();
     }
     
 }
